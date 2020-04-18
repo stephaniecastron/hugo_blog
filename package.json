@@ -10,7 +10,7 @@
     "build:css": "npm-run-all compile:sass compress:css",
     "build": "cross-env NODE_ENV=production npm-run-all build:assets",
     "build:img": "npm-run-all compress:img",
-    "build:hugo": "$HOME/hugo --ignoreCache --cleanDestinationDir",
+    "build:hugo": "hugo --ignoreCache --cleanDestinationDir",
     "clean": "npm-run-all --parallel clean:*",
     "clean:dist": "rimraf ./public/**/*.*",
     "clean:testResults": "rimraf ./testResults/**/*.xml",
