@@ -8,6 +8,8 @@ disableKinds:
   - "RSS"
   - "sitemap"
 enableRobotsTXT: false
+preloader: true
+nav_button: true
 metaDataFormat:  "yaml"
 enableMissingTranslationPlaceholders: true
 disableFastRender: true
@@ -20,32 +22,32 @@ buildFuture: true
 FootnoteReturnLinkContents: "↩"
 taxonomies:
   role: "role"
-# languages:
-#   pt:
-#     contentDir: content/portuguese
-#     languageName: Português
-#     languageCode: "pt-br"
-#     title: "Titulo Aqui"
-#     weight: 1
-#     params:
-#       description: "Descricao do site"
-#     menu:
-#       main:
-#           - Name: "Sobre"
-#             Pre: ""
-#             Weight: 1
-#             Identifier: "sobre"
-#             URL: "/sobre"
-#           - Name: "Blog"
-#             Pre: ""
-#             Weight: 2
-#             Identifier: "blog"
-#             URL: "/blog"
-#           - Name: "Contato"
-#             Pre: ""
-#             Weight: 3
-#             Identifier: "contato"
-#             URL: "/contato"
+languages:
+  pt:
+    contentDir: content/portuguese
+    languageName: Português
+    languageCode: "pt-br"
+    title: "Dalu Noticias"
+    weight: 1
+    params:
+      description: "Site Dalu Noticias, suas notícias em primeira mão"
+    menu:
+      main:
+          - Name: "Inicio"
+            Pre: ""
+            Weight: 1
+            Identifier: "inicio"
+            URL: "/"
+          - Name: "Blog"
+            Pre: ""
+            Weight: 2
+            Identifier: "blog"
+            URL: "/posts"
+          - Name: "Contato"
+            Pre: ""
+            Weight: 3
+            Identifier: "contato"
+            URL: "/contato"
 params:
   authorName:    "Stephanie de Castro"
   gitHubUser:    "stephaniecastron"
