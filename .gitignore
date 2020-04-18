@@ -67,3 +67,4 @@ node_modules/
 /public/
 /assets/
 /resources/_gen
+package-lock.json
