@@ -27,9 +27,7 @@ jobs:
     - name: npm install, test, build and deploy
       run: |
         pwd
-        cd $HOME/hugo
-        pwd
-        hugo version
+        $HOME/hugo -v
         npm install firebase-tools@8.0.0
         npm install
         npm run build
