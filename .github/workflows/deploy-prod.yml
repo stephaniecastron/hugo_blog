@@ -13,6 +13,8 @@ jobs:
         node-version: [10.16.0]
 
     steps:
+    - name: Set Docker
+      uses: docker://node
     - uses: actions/checkout@v1
     - name: Install Hugo
       run: |
