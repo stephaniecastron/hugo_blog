@@ -33,7 +33,6 @@ jobs:
         # $HOME/hugo --ignoreCache --cleanDestinationDir
         pwd
         ls
-        cd hugo
         $HOME/hugo --ignoreCache --cleanDestinationDir
         # firebase deploy --only hosting --token $FIREBASE_TOKEN
       env:
