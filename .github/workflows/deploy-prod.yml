@@ -14,28 +14,31 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Install Hugo
-      run: |
-          HUGO_DOWNLOAD=hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
-          wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_DOWNLOAD}
-          tar xvzf ${HUGO_DOWNLOAD} hugo
-          mv hugo $HOME/hugo
-      env:
-        HUGO_VERSION: 0.64.0
+    # - name: Install Hugo
+    #   run: |
+    #       HUGO_DOWNLOAD=hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
+    #       wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_DOWNLOAD}
+    #       tar xvzf ${HUGO_DOWNLOAD} hugo
+    #       mv hugo $HOME/hugo
+    #   env:
+    #     HUGO_VERSION: 0.64.0
+    - name: Set Docker
+      uses: homebrew/brew
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install, test, build and deploy
       run: |
-        npm install -g firebase-tools
-        npm install
-        npm run build
-        $HOME/hugo -D --ignoreCache --cleanDestinationDir
-        pwd
-        cd public
-        pwd 
-        ls
+        brew install hugo
+        # npm install -g firebase-tools
+        # npm install
+        # npm run build
+        # $HOME/hugo -D --ignoreCache --cleanDestinationDir
+        # pwd
+        # cd public
+        # pwd 
+        # ls
         # firebase deploy --only hosting --token $FIREBASE_TOKEN
       env:
         CI: true
