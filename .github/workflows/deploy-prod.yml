@@ -17,13 +17,9 @@ jobs:
       uses: docker://node
     - uses: actions/checkout@v1
     - name: Install Hugo
-      run: |
-          HUGO_DOWNLOAD=hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
-          wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_DOWNLOAD}
-          tar xvzf ${HUGO_DOWNLOAD} hugo
-          mv hugo $HOME/hugo
-      env:
-        HUGO_VERSION: 0.69.0
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.69.'
     - name: npm install, test, build and deploy
       run: |
         npm install firebase-tools@8.0.0
