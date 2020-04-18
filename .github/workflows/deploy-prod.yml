@@ -31,9 +31,11 @@ jobs:
         npm install -g firebase-tools
         npm install
         npm run build
-        $HOME/hugo --ignoreCache --cleanDestinationDir
+        npm run build:hugo
         pwd
         cd public
+        pwd
+
         ls
         # firebase deploy --only hosting --token $FIREBASE_TOKEN
       env:
