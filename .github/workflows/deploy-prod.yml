@@ -32,6 +32,8 @@ jobs:
         npm install
         npm run build
         $HOME/hugo --ignoreCache --cleanDestinationDir
+        pwd
+        ls
         firebase deploy --only hosting --token $FIREBASE_TOKEN
       env:
         CI: true
