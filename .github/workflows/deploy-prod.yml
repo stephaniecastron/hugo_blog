@@ -30,7 +30,7 @@ jobs:
         npm install -g firebase-tools
         npm install
         npm run build
-        hugo --ignoreCache --cleanDestinationDir
+        # hugo --ignoreCache --cleanDestinationDir
         # $HOME/hugo --ignoreCache --cleanDestinationDir
         pwd
         ls
