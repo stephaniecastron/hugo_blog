@@ -23,7 +23,7 @@ jobs:
         #   env:
         #     HUGO_VERSION: 0.64.0
     - name: Set Docker
-      uses: homebrew/brew
+      uses: docker://homebrew/brew
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
