@@ -13,15 +13,15 @@ jobs:
         node-version: [10.16.0]
 
     steps:
-    - uses: actions/checkout@v1
-    # - name: Install Hugo
-    #   run: |
-    #       HUGO_DOWNLOAD=hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
-    #       wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_DOWNLOAD}
-    #       tar xvzf ${HUGO_DOWNLOAD} hugo
-    #       mv hugo $HOME/hugo
-    #   env:
-    #     HUGO_VERSION: 0.64.0
+        # - uses: actions/checkout@v1
+        # - name: Install Hugo
+        #   run: |
+        #       HUGO_DOWNLOAD=hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz
+        #       wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_DOWNLOAD}
+        #       tar xvzf ${HUGO_DOWNLOAD} hugo
+        #       mv hugo $HOME/hugo
+        #   env:
+        #     HUGO_VERSION: 0.64.0
     - name: Set Docker
       uses: homebrew/brew
     - name: Use Node.js ${{ matrix.node-version }}
