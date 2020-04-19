@@ -1,7 +1,10 @@
 baseURL: "/"
-defaultContentLanguage: pt
-languageCode:    "pt-br"
-theme: "airspace"
+title: "Dalu Noticias"
+theme: airspace
+paginate: "4"
+summaryLength: "30"
+disqusShortname: ""
+disableLanguages: []
 disableKinds:
   - "taxonomy"
   - "taxonomyTerm"
@@ -10,10 +13,10 @@ disableKinds:
 enableRobotsTXT: false
 preloader: true
 nav_button: true
-metaDataFormat:  "yaml"
+metaDataFormat: "yaml"
 enableMissingTranslationPlaceholders: true
 disableFastRender: true
-ignoreFiles: [ "\\.tmp$", "\\.tmp\\-browserify" ]
+ignoreFiles: ["\\.tmp$", "\\.tmp\\-browserify"]
 stepAnalysis: true
 templateMetrics: true
 pluralizeListTitles: false
@@ -22,32 +25,124 @@ buildFuture: true
 FootnoteReturnLinkContents: "↩"
 taxonomies:
   role: "role"
-languages:
+params:
+  plugins:
+    css:
+      - link: plugins/bootstrap/bootstrap.min.css
+      - link: plugins/Ionicons/css/ionicons.min.css
+      - link: plugins/magnific-popup/magnific-popup.css
+      - link: plugins/slick/slick.css
+    js:
+      - link: plugins/jQuery/jquery.min.js
+      - link: plugins/bootstrap/bootstrap.min.js
+      - link: plugins/slick/slick.min.js
+      - link: plugins/magnific-popup/jquery.magnific-popup.min.js
+      - link: plugins/shuffle/shuffle.min.js
+      - link: plugins/google-map/gmap.js
+    authorName: "Stephanie de Castro"
+    gitHubUser: "stephaniecastron"
+  logo: images/logo.png
+  description: This is meta description
+  author: Themefisher
+  mobile: 0124857985320
+  email: demo@email.com
+  location: "North Main Street,Brooklyn Australia"
+  contact_form_action: "#"
+  google_analitycs_id: ""
+  multi_author: false
+  preloader:
+    enable: true
+    preloader: ""
+  nav_button:
+    enable: true
+    label: Get A Quote
+    link: contact
+  gmap:
+    enable: true
+    gmap_api: >-
+      https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places
+    map_latitude: "51.5223477"
+    map_longitude: "-0.1622023"
+    map_marker: images/marker.png
+  social:
+    - icon: ion-social-googleplus-outline
+      link: "#"
+    - icon: ion-social-linkedin-outline
+      link: "#"
+    - icon: ion-social-pinterest-outline
+      link: "#"
+    - icon: ion-social-dribbble-outline
+      link: "#"
+    - icon: ion-social-twitter-outline
+      link: "#"
+    - icon: ion-social-facebook-outline
+      link: "#"
+menu:
+  main:
+    - name: Famosos
+      URL: about
+      weight: 1
+    - name: Project
+      URL: project
+      weight: 2
+    - name: Service
+      URL: service
+      weight: 3
+    - name: Blog
+      URL: blog
+      weight: 4
+    - weight: 5
+      name: Pages
+      hasChildren: true
+    - parent: Pages
+      name: FAQ
+      URL: faq
+    - parent: Pages
+      name: Pricing
+      URL: pricing
+    - name: Contact
+      URL: contact
+      weight: 6
+  footer:
+    - name: About
+      URL: about
+      weight: 1
+    - name: Project
+      URL: project
+      weight: 2
+    - name: Service
+      URL: service
+      weight: 3
+    - name: Pricing
+      URL: pricing
+      weight: 4
+    - name: FAQ
+      URL: faq
+      weight: 5
+    - name: Contact
+      URL: contact
+      weight: 6
+Languages:
   pt:
     contentDir: content/portuguese
     languageName: Português
     languageCode: "pt-br"
-    title: "Dalu Noticias"
+    home: Home
+  en:
+    languageName: En
+    languageCode: en-us
+    contentDir: content/english
     weight: 1
-    params:
-      description: "Site Dalu Noticias, suas notícias em primeira mão"
-    menu:
-      main:
-          - Name: "Inicio"
-            Pre: ""
-            Weight: 1
-            Identifier: "inicio"
-            URL: "/"
-          - Name: "Blog"
-            Pre: ""
-            Weight: 2
-            Identifier: "blog"
-            URL: "/posts"
-          - Name: "Contato"
-            Pre: ""
-            Weight: 3
-            Identifier: "contato"
-            URL: "/contato"
-params:
-  authorName:    "Stephanie de Castro"
-  gitHubUser:    "stephaniecastron"
+    home: Home
+    copyright: >-
+      Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
+      Reserved
+  fr:
+    languageName: Fr
+    languageCode: fr-fr
+    contentDir: content/french
+    weight: 2
+    home: Accueil
+    copyright: >-
+      Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
+      Reserved
