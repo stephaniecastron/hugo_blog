@@ -24,7 +24,7 @@ jobs:
       #     HUGO_VERSION: 0.69.0
       - uses: actions/checkout@v2
         with:
-          submodules: false  # Fetch Hugo themes
+          submodules: true  # Fetch Hugo themes
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -39,9 +39,7 @@ jobs:
           npm install -g firebase-tools
           npm install
           npm run build
-          # npm run build:hugo
-          # $HOME/hugo -D --ignoreCache --cleanDestinationDir
-          # firebase deploy --only hosting --token $FIREBASE_TOKEN
+          firebase deploy --only hosting --token $FIREBASE_TOKEN
         env:
           CI: true
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
