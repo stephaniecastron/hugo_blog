@@ -123,25 +123,21 @@ menu:
       weight: 6
 Languages:
   pt:
-    contentDir: content/portuguese
     languageName: Português
     languageCode: "pt-br"
-    home: Home
+    contentDir: content/portuguese
+    weight: 1
+    home: Incio
+    copyright: >-
+      Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
+      Reserved
   en:
-    languageName: En
+    languageName: English
     languageCode: en-us
     contentDir: content/english
-    weight: 1
+    weight: 2
     home: Home
     copyright: >-
       Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
       Reserved
-  fr:
-    languageName: Fr
-    languageCode: fr-fr
-    contentDir: content/french
-    weight: 2
-    home: Accueil
-    copyright: >-
-      Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
-      Reserved
+
