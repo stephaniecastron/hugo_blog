@@ -8,6 +8,10 @@
 // '../../node_modules/include-media/dist/include-media';
 '../../node_modules/bootstrap/scss/bootstrap';
 
+// 7. Themes
+@import
+'themes/airspace/assets/scss/style';
+
 // 1. Configuration and helpers
 @import
 'abstracts/functions',
@@ -43,7 +47,5 @@
 @import
 'pages/home';
 
-// 7. Themes
-@import
-'themes/airspace/assets/scss/style';
+
 

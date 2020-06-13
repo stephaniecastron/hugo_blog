@@ -8,9 +8,18 @@
  *
  * Within any `document` or `application`, the author **SHOULD** mark no more than one element with the `banner` role.
  */
-[role='banner'] {
-}
+[role='banner'] {}
 
-header{
-    
+header {
+
+    .navigation{
+        padding: 10px 0;
+    }
+    .navbar-toggler .icon-bar {
+        background: $primary-color;
+    }
+
+    .dropdown-toggle:after {
+        content: none;
+    }
 }
