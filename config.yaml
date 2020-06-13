@@ -28,7 +28,6 @@ taxonomies:
 params:
   plugins:
     css:
-      - link: plugins/bootstrap/bootstrap.min.css
       - link: plugins/Ionicons/css/ionicons.min.css
       - link: plugins/magnific-popup/magnific-popup.css
       - link: plugins/slick/slick.css
