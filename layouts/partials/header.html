@@ -19,10 +19,13 @@
                                     class="nav-link">{{ .Site.Params.home }}</a>
                                 {{ range .Site.Menus.main }}
                                 {{ if .HasChildren }}
-                            <li class="dropdown nav-item"> <a href="#" class="dropdown-toggle nav-link"
-                                    data-toggle="dropdown" role="button" aria-haspopup="true"
-                                    aria-expanded="false">{{ .Name }} <span class="ion-ios-arrow-down"></span></a>
-                                <ul class="dropdown-menu">{{ range .Children }}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ .Name }}
+                                    <span class="ion-ios-arrow-down"></span>
+                                </a>
+                                <ul class="dropdown-menu" >{{ range .Children }}
                                     <li class="dropdown-item"><a href="{{ .URL | absLangURL }}">{{ .Name }}</a> </li>
                                     {{ end }}
                                 </ul>

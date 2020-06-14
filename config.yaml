@@ -25,6 +25,10 @@ buildFuture: true
 FootnoteReturnLinkContents: "↩"
 taxonomies:
   role: "role"
+module:
+  mounts:
+    source: node_modules/bootstrap/dist/js/bootstrap.min.js
+    target: static/plugins/bootstrap/bootstrap.min.js
 params:
   plugins:
     css:
@@ -37,7 +41,7 @@ params:
       - link: plugins/slick/slick.min.js
       - link: plugins/magnific-popup/jquery.magnific-popup.min.js
       - link: plugins/shuffle/shuffle.min.js
-      - link: plugins/google-map/gmap.js
+      - link: plugins/google-map/gmap.js,
     authorName: "Stephanie de Castro"
     gitHubUser: "stephaniecastron"
   logo: images/logo.png

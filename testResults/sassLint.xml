@@ -572,11 +572,20 @@
 <testsuite package="org.eslint" time="0" tests="1" errors="1" name="./source/stylesheets/layout/_gallery.scss">
 <testcase time="0" name="org.eslint.no-css-comments"><failure message="Multiline style comments should not be used"><![CDATA[line 1, col 1, Warning - Multiline style comments should not be used (no-css-comments)]]></failure></testcase>
 </testsuite>
-<testsuite package="org.eslint" time="0" tests="5" errors="5" name="./source/stylesheets/layout/_header.scss">
+<testsuite package="org.eslint" time="0" tests="14" errors="14" name="./source/stylesheets/layout/_header.scss">
 <testcase time="0" name="org.eslint.no-css-comments"><failure message="Multiline style comments should not be used"><![CDATA[line 4, col 1, Warning - Multiline style comments should not be used (no-css-comments)]]></failure></testcase>
 <testcase time="0" name="org.eslint.no-empty-rulesets"><failure message="No empty blocks allowed"><![CDATA[line 11, col 17, Warning - No empty blocks allowed (no-empty-rulesets)]]></failure></testcase>
-<testcase time="0" name="org.eslint.space-before-brace"><failure message="Whitespace required before {"><![CDATA[line 14, col 6, Warning - Whitespace required before { (space-before-brace)]]></failure></testcase>
-<testcase time="0" name="org.eslint.no-empty-rulesets"><failure message="No empty blocks allowed"><![CDATA[line 14, col 7, Warning - No empty blocks allowed (no-empty-rulesets)]]></failure></testcase>
-<testcase time="0" name="org.eslint.no-trailing-whitespace"><failure message="No trailing whitespace allowed"><![CDATA[line 14, col 8, Warning - No trailing whitespace allowed (no-trailing-whitespace)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Expected indentation of 2 space but found 4."><![CDATA[line 15, col 5, Warning - Expected indentation of 2 space but found 4. (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.space-before-brace"><failure message="Whitespace required before {"><![CDATA[line 15, col 15, Warning - Whitespace required before { (space-before-brace)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Expected indentation of 4 spaces but found 8."><![CDATA[line 16, col 9, Warning - Expected indentation of 4 spaces but found 8. (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.empty-line-between-blocks"><failure message="Space expected between blocks"><![CDATA[line 18, col 1, Warning - Space expected between blocks (empty-line-between-blocks)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Expected indentation of 2 space but found 4."><![CDATA[line 18, col 5, Warning - Expected indentation of 2 space but found 4. (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.force-element-nesting"><failure message="Class should be nested within its parent Class"><![CDATA[line 18, col 5, Warning - Class should be nested within its parent Class (force-element-nesting)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Expected indentation of 4 spaces but found 8."><![CDATA[line 19, col 9, Warning - Expected indentation of 4 spaces but found 8. (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Expected indentation of 2 space but found 4."><![CDATA[line 22, col 5, Warning - Expected indentation of 2 space but found 4. (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.force-pseudo-nesting"><failure message="Pseudo-class should be nested within its parent Class"><![CDATA[line 22, col 5, Warning - Pseudo-class should be nested within its parent Class (force-pseudo-nesting)]]></failure></testcase>
+<testcase time="0" name="org.eslint.pseudo-element"><failure message="Pseudo-elements must start with double colons"><![CDATA[line 22, col 21, Warning - Pseudo-elements must start with double colons (pseudo-element)]]></failure></testcase>
+<testcase time="0" name="org.eslint.indentation"><failure message="Expected indentation of 4 spaces but found 8."><![CDATA[line 23, col 9, Warning - Expected indentation of 4 spaces but found 8. (indentation)]]></failure></testcase>
+<testcase time="0" name="org.eslint.final-newline"><failure message="Files must end with a new line"><![CDATA[line 25, col 1, Warning - Files must end with a new line (final-newline)]]></failure></testcase>
 </testsuite>
 </testsuites>
