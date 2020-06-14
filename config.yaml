@@ -23,12 +23,16 @@ pluralizeListTitles: false
 googleAnalytics: ""
 buildFuture: true
 FootnoteReturnLinkContents: "↩"
+defaultContentLanguage: pt
+languageCode:    "pt-br"
 taxonomies:
   role: "role"
-# module:
-#   mounts:
-#     source: node_modules/bootstrap/dist/js/bootstrap.min.js
-#     target: static/plugins/bootstrap/bootstrap.min.js
+module:
+  mounts:
+  - source: static
+    target: static
+  - source: node_modules/bootstrap/dist/js/bootstrap.min.js
+    target: static/plugins/bootstrap/bootstrap.min.js
 params:
   plugins:
     css:
