@@ -139,13 +139,4 @@ Languages:
     copyright: >-
       Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
       Reserved
-  en:
-    languageName: English
-    languageCode: en-us
-    contentDir: content/english
-    weight: 2
-    home: Home
-    copyright: >-
-      Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
-      Reserved
 

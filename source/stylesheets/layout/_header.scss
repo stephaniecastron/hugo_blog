@@ -11,10 +11,14 @@
 [role='banner'] {}
 
 header {
+    .header-container {
+        padding: 0 5%;
+    }
 
-    .navigation{
+    .navigation {
         padding: 10px 0;
     }
+
     .navbar-toggler .icon-bar {
         background: $primary-color;
     }
