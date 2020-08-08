@@ -26,4 +26,13 @@ header {
     .dropdown-toggle:after {
         content: none;
     }
+
+    .dropdown-item:hover {
+        background-color: #655e7a91;
+
+    }
+
+    .navigation .navbar .dropdown-menu a:hover {
+        background: transparent;
+    }
 }

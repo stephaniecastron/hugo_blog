@@ -87,27 +87,69 @@ params:
 menu:
   main:
     - name: Famosos
-      URL: about
-      weight: 1
-    - name: Project
-      URL: project
-      weight: 2
-    - name: Service
-      URL: service
-      weight: 3
-    - name: Blog
-      URL: blog
-      weight: 4
-    - weight: 5
-      name: Pages
       hasChildren: true
-    - parent: Pages
-      name: FAQ
+      weight: 1
+    - parent: Famosos
+      name: Celebridades
+      URL: blog
+    - parent: Famosos
+      name: Novelas
+      URL: blog
+    - parent: Famosos
+      name: Tv
+      URL: blog
+    - name: Cultura
+      hasChildren: true
+      weight: 2
+    - parent: Cultura
+      name: Teatro
+      URL: blog
+    - parent: Cultura
+      name: Cinema
+      URL: blog
+    - parent: Cultura
+      name: Arte
+      URL: blog
+    - name: Esportes
+      hasChildren: true
+      weight: 3
+    - parent: Esportes
+      name: Aquáticos
+      URL: blog
+    - parent: Esportes
+      name: Futebol
+      URL: blog
+    - parent: Esportes
+      name: Lutas
+      URL: blog
+    - name: Entretenimento
+      hasChildren: true
+      weight: 4
+    - parent: Entretenimento
+      name: Shows
+      URL: blog
+    - parent: Entretenimento
+      name: Música
+      URL: blog
+    - parent: Entretenimento
+      name: Reality Show
+      URL: blog
+    - name: Estilo de Vida
+      hasChildren: true
+      weight: 5
+    - parent: Estilo de Vida
+      name: Beleza
       URL: faq
-    - parent: Pages
-      name: Pricing
+    - parent: Estilo de Vida
+      name: Saúde e Bem Estar
       URL: pricing
-    - name: Contact
+    - parent: Estilo de Vida
+      name: Moda
+      URL: pricing
+    - parent: Estilo de Vida
+      name: Decoração
+      URL: pricing
+    - name: Variedades
       URL: contact
       weight: 6
   footer:
