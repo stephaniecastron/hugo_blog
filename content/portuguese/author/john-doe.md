@@ -2,6 +2,8 @@
 title: "John Doe"
 email: "email2@example.org"
 bg_image: "images/featue-bg.jpg"
+date: 2018-09-24T11:07:10+06:00
+author: John Doe
 draft: false
 social:
   - icon : "ion-social-facebook-outline" #ionicon pack v2 : https://ionicons.com/v2/
