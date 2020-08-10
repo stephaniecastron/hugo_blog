@@ -53,3 +53,5 @@ fields:
     required: false
   description: tipo do conteúdo
   label: Tipo do conteúdo
+pages:
+- content/portuguese/blog/teste-post.md
