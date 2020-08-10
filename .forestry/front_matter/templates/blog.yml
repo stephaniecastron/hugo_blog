@@ -1,4 +1,55 @@
 ---
 label: blog
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  description: Digite o título da página
+  label: Título do post
+- name: date
+  type: datetime
+  label: Data de publicação do post
+  description: Data da publicação
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: author
+  type: text
+  config:
+    required: false
+  label: Autor do post
+  description: Nome do Autor do post
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Imagem do post
+  description: Imagem do post
+- name: bg_image
+  type: file
+  config:
+    maxSize: 64
+  label: Imagem de background
+  description: Imagem de background para o post
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
+  description: Tags do post
+- name: description
+  type: text
+  config:
+    required: false
+  label: Descrição da página
+  description: Campo importante será utilizado para descrição da página nas meta tags
+    ( seo)
+- name: type
+  type: text
+  config:
+    required: false
+  description: tipo do conteúdo
+  label: Tipo do conteúdo
