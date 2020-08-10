@@ -53,5 +53,7 @@ fields:
     required: false
   description: tipo do conteúdo
   label: Tipo do conteúdo
+  hidden: true
+  default: post
 pages:
 - content/portuguese/blog/teste-post.md
