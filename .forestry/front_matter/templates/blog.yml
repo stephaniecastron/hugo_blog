@@ -55,6 +55,3 @@ fields:
   label: Tipo do conteúdo
   hidden: true
   default: post
-pages:
-- content/portuguese/blog/programa-fama-e-destaque-comemora-tres-anos-de-sucesso.md
-- content/portuguese/blog/teste-post.md
