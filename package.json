@@ -4,7 +4,7 @@
   "description": "Blog Dalu Noticias com hugo",
   "main": "index.html",
   "scripts": {
-    "start": "npm-run-all build:assets && hugo serve -D",
+    "start": "npm-run-all build:assets && hugo server -D -E -F",
     "audit-deps": "rimraf -f package-lock.json && synp --source-file yarn.lock && npm audit & rimraf -f package-lock.json",
     "prebuild": "npm-run-all --parallel lint clean",
     "build:assets": "npm-run-all --parallel build:img build:css",
