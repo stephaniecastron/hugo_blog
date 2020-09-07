@@ -69,4 +69,5 @@ node_modules/
 /resources/_gen
 package-lock.json
 /public/
+settings.json
 
