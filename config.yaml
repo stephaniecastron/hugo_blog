@@ -24,15 +24,16 @@ googleAnalytics: ""
 buildFuture: true
 FootnoteReturnLinkContents: "↩"
 defaultContentLanguage: pt
-languageCode:    "pt-br"
+languageCode: "pt-br"
 taxonomies:
-  role: "role"
+  category: categories
+  tag: tags
 module:
   mounts:
-  - source: static
-    target: static
-  - source: node_modules/bootstrap/dist/js/bootstrap.min.js
-    target: static/plugins/bootstrap/bootstrap.min.js
+    - source: static
+      target: static
+    - source: node_modules/bootstrap/dist/js/bootstrap.min.js
+      target: static/plugins/bootstrap/bootstrap.min.js
 params:
   plugins:
     css:
@@ -49,9 +50,9 @@ params:
     gitHubUser: "stephaniecastron"
   logo: images/logo.png
   description: This is meta description
-  author: Themefisher
+  author: Stephanie de Castro
   mobile: 0124857985320
-  email: demo@email.com
+  email: stephaniecastron@hotmail.com
   location: "North Main Street,Brooklyn Australia"
   contact_form_action: "#"
   google_analitycs_id: ""
@@ -175,4 +176,3 @@ Languages:
     copyright: >-
       Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
       Reserved
-

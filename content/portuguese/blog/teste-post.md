@@ -1,7 +1,7 @@
 ---
 tags:
 - teste
-- " tecnlogia"
+- tecnlogia
 - post
 title: Teste post
 date: 2020-08-10T03:00:00+00:00
