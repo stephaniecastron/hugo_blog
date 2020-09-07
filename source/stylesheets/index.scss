@@ -15,6 +15,7 @@
 // 1. Configuration and helpers
 @import
 'abstracts/functions',
+'abstracts/config',
 'abstracts/mixins';
 
 // 3. Base stuff
@@ -29,7 +30,8 @@
 'layout/form',
 'layout/gallery',
 'layout/header',
-'layout/footer';
+'layout/footer',
+'layout/blog-sidebar';
 
 // 5. Components
 // @import

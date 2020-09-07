@@ -3,14 +3,13 @@
     <div class="widget widget-latest-post">
         <h4 class="widget-title"> {{ i18n "latest_posts" }}</h4>
         {{ range first 4 (where .Site.Pages "Type" "post") }}
-        <div class="media"> <a class="float-left" href="{{ .Permalink }}">
-
+        <div class="media">
+            <a  href="{{ .Permalink }}">
                 <img class="media-object" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
-
             </a>
             <div class="media-body">
                 <h4 class="media-heading"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-                <p>{{ .Summary | truncate 50 }}</p>
+                <p>{{ .Summary | truncate 40 }}</p>
             </div>
         </div>{{ end }}
     </div>
@@ -35,7 +34,7 @@
     <div class="widget widget-tag">
         <h4 class="widget-title">{{ i18n "tags" }}</h4>
         {{- if isset .Site.Taxonomies "tags" }}
-         {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
+        {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
         <ul class="widget-tag-list">{{- range $name, $items := .Site.Taxonomies.tags }}
             <li><a href="{{ `tags/` | relLangURL }}{{ $name | urlize | lower }}">{{ $name | humanize }}</a>
             </li>{{- end }}</ul>{{- end }} {{- end }}

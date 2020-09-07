@@ -1,0 +1,11 @@
+.media {
+    margin-bottom: $leading * 0.5rem;
+    align-items: center;
+}
+
+.media-body {
+    margin-left: $leading * 0.5rem;
+    p{
+        margin-bottom: 0;
+    }
+}
