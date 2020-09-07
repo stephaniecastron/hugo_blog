@@ -3,7 +3,7 @@ tags: []
 type: post
 title: Programa Fama e Destaque comemora três anos de sucesso
 date: 2020-08-10T03:00:00+00:00
-author: Lourdes Castri
+author: Lourdes Castro
 image: "/uploads/viviane-alves-e-max-fivelinha-im-001.jpg"
 bg_image: ''
 description: ''
