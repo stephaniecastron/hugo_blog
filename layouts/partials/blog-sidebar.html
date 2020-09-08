@@ -4,7 +4,7 @@
         <h4 class="widget-title"> {{ i18n "latest_posts" }}</h4>
         {{ range first 4 (where .Site.Pages "Type" "post") }}
         <div class="media">
-            <a  href="{{ .Permalink }}">
+            <a href="{{ .Permalink }}">
                 <img class="media-object" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
             </a>
             <div class="media-body">
@@ -17,6 +17,10 @@
     <!-- Widget Category -->
     <div class="widget widget-category">
         <h4 class="widget-title">{{ i18n "categories" }}</h4>
+        {{range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
+        <a href="{{.Permalink}}">{{.Title}}</a></li>
+        {{end}}
+
         {{- if isset .Site.Taxonomies "categories" }}
         {{- if not (eq (len .Site.Taxonomies.categories) 0) }}
         <ul class="widget-category-list">{{- range $name, $items := .Site.Taxonomies.categories }}
@@ -33,6 +37,7 @@
     <!-- Widget tag -->
     <div class="widget widget-tag">
         <h4 class="widget-title">{{ i18n "tags" }}</h4>
+        {{len .Site.Taxonomies.tags}}
         {{- if isset .Site.Taxonomies "tags" }}
         {{- if not (eq (len .Site.Taxonomies.tags) 0) }}
         <ul class="widget-tag-list">{{- range $name, $items := .Site.Taxonomies.tags }}
@@ -41,3 +46,26 @@
     </div>
     <!-- End tag -->
 </aside>
+
+<section>
+    <ul id="all-taxonomies">
+        {{ range $taxonomy_term, $taxonomy := .Site.Taxonomies }}
+            {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+                <li><a href="{{ .Permalink }}">{{ $taxonomy_term }}</a>
+                    <ul>
+                        {{ range $key, $value := $taxonomy }}
+                            <li>{{ $key }}</li>
+                            <ul>
+                                {{ range $value.Pages }}
+                                    <li hugo-nav="{{ .RelPermalink}}">
+                                        <a href="{{ .Permalink}}">{{ .LinkTitle }}</a>
+                                    </li>
+                                {{ end }}
+                            </ul>
+                        {{ end }}
+                    </ul>
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</section>
