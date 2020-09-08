@@ -5,11 +5,6 @@ paginate: "4"
 summaryLength: "30"
 disqusShortname: ""
 disableLanguages: []
-disableKinds:
-  - "taxonomy"
-  - "taxonomyTerm"
-  - "RSS"
-  - "sitemap"
 enableRobotsTXT: false
 preloader: true
 nav_button: true
