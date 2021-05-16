@@ -56,4 +56,5 @@ fields:
   hidden: true
   default: post
 pages:
+- content/portuguese/blog/teste vazio.md
 - content/portuguese/blog/teste-post-1.md
