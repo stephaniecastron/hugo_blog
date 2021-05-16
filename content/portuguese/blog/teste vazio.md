@@ -7,6 +7,5 @@ author: ''
 image: ''
 bg_image: ''
 description: ''
-draft: true
 
 ---
