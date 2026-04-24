@@ -1,112 +1,77 @@
 {{ define "main" }}
-{{ $data := index .Site.Data .Site.Language.Lang}}
-<!-- banner -->
-{{ if $data.homepage.banner.enable }}
-{{ with $data.homepage.banner }}
-<section class="slider" style="background-image: url('{{ .bg_image | absURL }}');">
+{{ $posts := first 9 (where (where .Site.RegularPages.ByDate.Reverse "Type" "post") "Lang" .Site.Language.Lang) }}
+<section class="hero">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="block">
-          <h1>{{ .title | markdownify }}</h1>
-          <p>{{ .content | markdownify }}</p>
-          {{ if .button.enable }}
-          {{ with .button }} <a href="{{ .link | relLangURL }}" target="_blank"
-            class="btn btn-main animated fadeInUp">{{ .label }}</a>
-          {{ end }}
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>{{ end }} {{ end }}
-<!-- /banner -->
-{{ if $data.homepage.about.enable }}
-{{ with $data.homepage.about }}
-<!--  about -->
-<section class="about section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-7 col-md-12">
-        <div class="block">
-          <div class="section-title">
-            <h2>{{ .title | markdownify }}</h2>
-            <p>{{ .description | markdownify }}</p>
-          </div>
-          <p>{{ .content | markdownify }}</p>
-        </div>
-      </div>
-      <div class="col-lg-5 col-md-12">
-        <div class="block">
-          <img src="{{ .image | relURL }}" class="img-fluid" alt="Img">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /about -->
-{{ end }}
-{{ end }}
-{{ if $data.homepage.portfolio.enable }}
-{{ with $data.homepage.portfolio  }}
-<!-- portfolio -->
-<section class="feature bg-2" style="background-image: url('{{ .bg_image | absURL}}')">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 offset-md-6">
-        <h2 class="section-subtitle">{{ .title | markdownify }}</h2>
-        {{ .content | markdownify }} {{ if .button.enable }} {{ with .button }}
-        <a href="{{ .link | relLangURL }}" class="btn btn-view-works">{{ .label }}</a>{{ end }} {{ end }}
-      </div>
-    </div>
-  </div>
-</section>
-<!-- /portfolio -->
-{{ end }}
-{{ end }}
-<!-- Service -->
-{{ if $data.homepage.service.enable }}
-{{ partial "service.html" . }} {{ end }}
-<!-- /service -->
-<!-- Call to action -->{{ if $data.homepage.cta.enable }} {{ partial "cta.html" . }}
-{{ end }}
-<!-- /Call to action -->
-{{ if $data.homepage.funfacts.enable }}
-{{ with $data.homepage.funfacts }}
-<!-- Content Start -->
-<section class="testimonial">
-  <div class="container">
-    <div class="row">
-      <div class="section-title text-center">
-        <h2>{{ .title | markdownify }}</h2>
-        <p>{{ .description | markdownify }}</p>
-      </div>
-    </div>
-    <div class="row">
+    <div class="row align-items-center">
       <div class="col-lg-6">
-        <div class="block">
-          <ul class="counter-box clearfix">{{ range .funfact_item }}
-            <li class="counter-item"> <i class="{{ .icon }}"></i>
-              <h4 class="count" data-count="{{ .count }}">0</h4>
-              <span>{{ .name | markdownify }}</span>
-            </li>{{ end }}</ul>
+        <span class="hero-kicker">{{ .Site.Params.site_tagline }}</span>
+        <h1>{{ .Site.Params.hero_title }}</h1>
+        <p>{{ .Site.Params.hero_description }}</p>
+        <div class="hero-actions">
+          <a href="{{ `blog/` | relLangURL }}" class="btn btn-main">Ver todas as notícias</a>
         </div>
       </div>
-      <div class="col-lg-5 offset-md-1">
-        <div class="testimonial-carousel text-center">
-          <div class="testimonial-slider owl-carousel">{{ range .testimonial_slider }}
-            <div> <i class="ion-quote"></i>
-              <p>"{{ .content | markdownify }}"</p>
-              <div class="user">
-                <img src="{{ .image | relURL }}" alt="client">
-                <p><span>{{ .name | markdownify }}</span> {{ .designation | markdownify }}</p>
-              </div>
-            </div>{{ end }}</div>
-        </div>
+      {{ range first 1 $posts }}
+      <div class="col-lg-6">
+        <article class="featured-card">
+          {{ with .Params.Image }}<img src="{{ . | relURL }}" alt="{{ $.Title }}">{{ end }}
+          <div class="featured-card-body">
+            {{ with index .Params.categories 0 }}<span class="article-category">{{ . | humanize }}</span>{{ end }}
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            {{ with .Params.Description }}<p>{{ . }}</p>{{ end }}
+          </div>
+        </article>
       </div>
+      {{ end }}
     </div>
   </div>
 </section>
-{{ end }}
-{{ end }}
+
+<section class="section news-grid">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Últimas publicações</h2>
+      <p>As editorias principais já estão organizadas para você continuar alimentando o portal pelo CMS.</p>
+    </div>
+    <div class="row">
+      {{ range first 6 $posts }}
+      <div class="col-lg-4 col-md-6">
+        <article class="news-card">
+          {{ with .Params.Image }}<a href="{{ $.RelPermalink }}"><img src="{{ . | relURL }}" alt="{{ $.Title }}"></a>{{ end }}
+          <div class="news-card-body">
+            <div class="news-meta">
+              {{ with index .Params.categories 0 }}<span class="article-category">{{ . | humanize }}</span>{{ end }}
+              <span>{{ .Date.Format "02/01/2006" }}</span>
+            </div>
+            <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p>{{ .Summary | plainify | truncate 140 }}</p>
+          </div>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+    {{ if eq (len $posts) 0 }}
+    <div class="post-empty">
+      <h3>Nenhum post publicado ainda.</h3>
+      <p>Assim que você criar o primeiro conteúdo em `content/portuguese/blog`, ele já aparece na home automaticamente.</p>
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<section class="section categories-showcase">
+  <div class="container">
+    <div class="section-heading">
+      <h2>Editorias do portal</h2>
+      <p>O menu principal já aponta para cada categoria do Hugo, facilitando navegação, SEO e organização editorial.</p>
+    </div>
+    <div class="row">
+      {{ range site.Params.featured_categories }}
+      <div class="col-lg-3 col-md-4 col-6">
+        <a class="category-chip" href="{{ printf "categories/%s/" . | relLangURL }}">{{ . | humanize }}</a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
 {{ end }}

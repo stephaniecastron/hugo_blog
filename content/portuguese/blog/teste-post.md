@@ -1,4 +1,6 @@
 ---
+categories:
+- shows
 tags:
 - teste
 - tecnlogia

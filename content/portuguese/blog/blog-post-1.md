@@ -4,7 +4,7 @@ date: 2018-09-24T11:07:10+06:00
 author: John Doe
 image : "images/blog/blog-post-1.jpg"
 bg_image: "images/featue-bg.jpg"
-categories: ["Company News"]
+categories: ["noticias"]
 tags: ["Advice","Technology"]
 description: "this is meta description"
 draft: false

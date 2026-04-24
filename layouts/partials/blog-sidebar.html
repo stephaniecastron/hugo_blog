@@ -1,8 +1,7 @@
 <aside class="sidebar">
-    <!-- Widget Latest Posts -->
     <div class="widget widget-latest-post">
         <h4 class="widget-title"> {{ i18n "latest_posts" }}</h4>
-        {{ range first 4 (where .Site.Pages "Type" "post") }}
+        {{ range first 4 (where (where .Site.RegularPages "Type" "post") "Lang" .Site.Language.Lang) }}
         <div class="media">
             <a href="{{ .Permalink }}">
                 <img class="media-object" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
@@ -13,8 +12,6 @@
             </div>
         </div>{{ end }}
     </div>
-    <!-- End Latest Posts -->
-    <!-- Widget Category -->
     <div class="widget widget-category">
         <h4 class="widget-title">{{ i18n "categories" }}</h4>
         {{- if isset .Site.Taxonomies "categories" }}
@@ -22,15 +19,13 @@
         <ul class="widget-category-list">{{- range $name, $items := .Site.Taxonomies.categories }}
             <li>
                 <a href="{{ `categories/` | relLangURL }}{{ $name | urlize | lower }}">
-                    {{ $name | title | humanize }}
+                    {{ $name | humanize }} <span>({{ len $items }})</span>
                 </a>
             </li>
             {{- end }}</ul>
         {{- end }}
         {{- end }}
     </div>
-    <!-- End category -->
-    <!-- Widget tag -->
     <div class="widget widget-tag">
         <h4 class="widget-title">{{ i18n "tags" }}</h4>
         {{- if isset .Site.Taxonomies "tags" }}
@@ -39,5 +34,4 @@
             <li><a href="{{ `tags/` | relLangURL }}{{ $name | urlize | lower }}">{{ $name | humanize }}</a>
             </li>{{- end }}</ul>{{- end }} {{- end }}
     </div>
-    <!-- End tag -->
 </aside>

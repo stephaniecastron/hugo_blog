@@ -5,31 +5,17 @@
 				<div class="footer-manu">
 					<ul>
             {{ range .Site.Menus.footer }}
-            <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            <li><a href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
             {{ end }}
 					</ul>
 				</div>
-				<p class="copyright">{{ .Site.Params.copyright | markdownify }}</p>
+				<p class="copyright">{{ .Site.Copyright | markdownify }}</p>
 			</div>
 		</div>
 	</div>
 </footer>
-
-<!-- Google Map API -->
-{{ if .Site.Params.gmap.enable }}
-<script src="{{ .Site.Params.gmap.gmap_api | safeURL }}"></script>
-{{ end }}
-
-<!-- JS Plugins -->
-{{ range .Site.Params.plugins.js}}
-<script src="{{ .link | absURL }}"></script>
-{{ end }}
-
-<!-- Main Script -->
-{{ $script := resources.Get "js/script.js" | minify}}
-<script src="{{ $script.Permalink }}"></script>
-
-<!-- google analitycs -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 {{ with .Site.Params.google_analitycs_id }}
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

@@ -2,7 +2,7 @@
 <div class="page-wrapper">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-8">{{ $paginator := .Paginate .Data.Pages }} {{ range $paginator.Pages }}
+			<div class="col-lg-8">{{ $paginator := .Paginate (.Pages.ByDate.Reverse) }} {{ range $paginator.Pages }}
 				<div class="post">
 					<div class="post-media post-thumb"> <a href="{{ .Permalink }}">
 
@@ -13,7 +13,7 @@
 					<h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
 					<div class="post-meta">
 						<ul>
-							<li><i class="ion-calendar"></i> {{ .PublishDate.Format "January 2, 2006"}}</li>
+							<li><i class="ion-calendar"></i> {{ .PublishDate.Format "02/01/2006"}}</li>
 							<li><i class="ion-android-people"></i>
 								{{ i18n "posted_by" }}
 								{{if $.Site.Params.multi_author}} {{ range $index, $elements:= .Params.Author}}
@@ -22,6 +22,13 @@
 								{{ end }} {{else}} <a class="text-primary"
 									href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.Author }}</a>
 								{{end}}</li>
+							{{ with .Params.categories }}
+							<li><i class="ion-folder"></i>
+								{{ range $index, $elements := . }}
+								{{ if ne $index 0 }}, {{ end }}<a href="{{ `categories/` | relLangURL }}{{ . | urlize }}">{{ . | humanize }}</a>
+								{{ end }}
+							</li>
+							{{ end }}
 							<li><i class="ion-pricetags"></i>
 								{{ range $index, $elements:= .Params.Tags}}
 								{{ if ne $index 0 }}, {{ end }}<a
@@ -33,6 +40,12 @@
 						<p>{{ .Summary }}</p> <a href="{{ .Permalink }}" class="btn btn-main">{{ i18n "read_more" }}</a>
 					</div>
 				</div>{{ end }}
+				{{ if eq (len $paginator.Pages) 0 }}
+				<div class="post-empty">
+					<h3>Nenhum post nesta editoria ainda.</h3>
+					<p>Crie ou edite um post pelo CMS e preencha o campo de categoria para ele aparecer aqui automaticamente.</p>
+				</div>
+				{{ end }}
 				<!-- pagination -->{{ $paginator := .Paginator }} {{ $adjacent_links := 2 }}
 				{{ $max_links:= (add (mul $adjacent_links 2) 1) }} {{ $lower_limit := (add $adjacent_links 1) }}
 				{{ $upper_limit := (sub $paginator.TotalPages $adjacent_links) }}

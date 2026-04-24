@@ -1,173 +1,98 @@
 baseURL: "/"
 title: "Dalu Noticias"
-theme: airspace
-paginate: "4"
-summaryLength: "30"
+pagination:
+  pagerSize: 6
+summaryLength: 30
 disqusShortname: ""
-disableLanguages: []
-enableRobotsTXT: false
-preloader: true
-nav_button: true
-metaDataFormat: "yaml"
-enableMissingTranslationPlaceholders: true
-disableFastRender: true
+enableRobotsTXT: true
 ignoreFiles: ["\\.tmp$", "\\.tmp\\-browserify"]
-stepAnalysis: true
-templateMetrics: true
 pluralizeListTitles: false
 googleAnalytics: ""
 buildFuture: true
-FootnoteReturnLinkContents: "↩"
 defaultContentLanguage: pt
-languageCode: "pt-br"
+languageCode: "pt-BR"
 taxonomies:
   category: categories
   tag: tags
-module:
-  mounts:
-    - source: static
-      target: static
-    - source: node_modules/bootstrap/dist/js/bootstrap.min.js
-      target: static/plugins/bootstrap/bootstrap.min.js
 params:
-  plugins:
-    css:
-      - link: plugins/Ionicons/css/ionicons.min.css
-      - link: plugins/magnific-popup/magnific-popup.css
-      - link: plugins/slick/slick.css
-    js:
-      - link: plugins/jQuery/jquery.min.js
-      - link: plugins/bootstrap/bootstrap.min.js
-      - link: plugins/slick/slick.min.js
-      - link: plugins/magnific-popup/jquery.magnific-popup.min.js
-      - link: plugins/shuffle/shuffle.min.js
-    authorName: "Stephanie de Castro"
-    gitHubUser: "stephaniecastron"
+  home: "Início"
   logo: images/logo.png
-  description: This is meta description
+  description: "Portal de notícias com foco em entretenimento, famosos, destaques, esportes, shows, saúde, bem-estar e gastronomia."
   author: Stephanie de Castro
-  mobile: 0124857985320
   email: stephaniecastron@hotmail.com
-  location: "North Main Street,Brooklyn Australia"
+  location: "Brasil"
   contact_form_action: "#"
   google_analitycs_id: ""
   multi_author: false
-  preloader:
-    enable: true
-    preloader: ""
-  nav_button:
-    enable: true
-    label: Get A Quote
-    link: contact
   gmap:
     enable: false
+  site_tagline: "Notícias, famosos e entretenimento em destaque"
+  hero_title: "Dalu Notícias"
+  hero_description: "Conteúdo atualizado sobre entretenimento, famosos, destaques, notícias, esportes, shows, saúde e gastronomia."
+  featured_categories:
+    - entretenimento
+    - famosos
+    - destaques
+    - noticias
+    - esportes
+    - shows
+    - saude-bem-estar
+    - gastronomia
   social:
-    - icon: ion-social-googleplus-outline
-      link: "#"
-    - icon: ion-social-linkedin-outline
-      link: "#"
-    - icon: ion-social-pinterest-outline
-      link: "#"
-    - icon: ion-social-dribbble-outline
-      link: "#"
-    - icon: ion-social-twitter-outline
+    - icon: ion-social-instagram-outline
       link: "#"
     - icon: ion-social-facebook-outline
       link: "#"
+    - icon: ion-social-twitter-outline
+      link: "#"
 menu:
   main:
-    - name: Famosos
-      hasChildren: true
-      weight: 1
-    - parent: Famosos
-      name: Celebridades
-      URL: blog
-    - parent: Famosos
-      name: Novelas
-      URL: blog
-    - parent: Famosos
-      name: Tv
-      URL: blog
-    - name: Cultura
-      hasChildren: true
-      weight: 2
-    - parent: Cultura
-      name: Teatro
-      URL: blog
-    - parent: Cultura
-      name: Cinema
-      URL: blog
-    - parent: Cultura
-      name: Arte
-      URL: blog
-    - name: Esportes
-      hasChildren: true
-      weight: 3
-    - parent: Esportes
-      name: Aquáticos
-      URL: blog
-    - parent: Esportes
-      name: Futebol
-      URL: blog
-    - parent: Esportes
-      name: Lutas
-      URL: blog
     - name: Entretenimento
-      hasChildren: true
-      weight: 4
-    - parent: Entretenimento
-      name: Shows
-      URL: blog
-    - parent: Entretenimento
-      name: Música
-      URL: blog
-    - parent: Entretenimento
-      name: Reality Show
-      URL: blog
-    - name: Estilo de Vida
-      hasChildren: true
-      weight: 5
-    - parent: Estilo de Vida
-      name: Beleza
-      URL: faq
-    - parent: Estilo de Vida
-      name: Saúde e Bem Estar
-      URL: pricing
-    - parent: Estilo de Vida
-      name: Moda
-      URL: pricing
-    - parent: Estilo de Vida
-      name: Decoração
-      URL: pricing
-    - name: Variedades
-      URL: contact
-      weight: 6
-  footer:
-    - name: About
-      URL: about
+      url: /categories/entretenimento/
       weight: 1
-    - name: Project
-      URL: project
+    - name: Famosos
+      url: /categories/famosos/
       weight: 2
-    - name: Service
-      URL: service
+    - name: Destaques
+      url: /categories/destaques/
       weight: 3
-    - name: Pricing
-      URL: pricing
+    - name: Notícias
+      url: /categories/noticias/
       weight: 4
-    - name: FAQ
-      URL: faq
+    - name: Esportes
+      url: /categories/esportes/
       weight: 5
-    - name: Contact
-      URL: contact
+    - name: Shows
+      url: /categories/shows/
       weight: 6
+    - name: Saúde / Bem-estar
+      url: /categories/saude-bem-estar/
+      weight: 7
+    - name: Gastronomia
+      url: /categories/gastronomia/
+      weight: 8
+    - name: Blog
+      url: /blog/
+      weight: 9
+  footer:
+    - name: Início
+      url: /
+      weight: 1
+    - name: Todas as notícias
+      url: /blog/
+      weight: 2
+    - name: Entretenimento
+      url: /categories/entretenimento/
+      weight: 3
+    - name: Esportes
+      url: /categories/esportes/
+      weight: 4
 Languages:
   pt:
     languageName: Português
-    languageCode: "pt-br"
+    languageCode: "pt-BR"
     contentDir: content/portuguese
     weight: 1
-    home: Incio
+    home: Início
     copyright: >-
-      Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
-      Reserved
+      Copyright &copy; 2026 Dalu Notícias. Todos os direitos reservados.

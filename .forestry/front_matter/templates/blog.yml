@@ -1,5 +1,5 @@
 ---
-label: blog
+label: Post do blog
 hide_body: false
 fields:
 - name: title
@@ -23,6 +23,13 @@ fields:
     required: false
   label: Autor do post
   description: Nome do Autor do post
+- name: categories
+  type: tag_list
+  default: []
+  config:
+    required: true
+  label: Categoria
+  description: Use uma das editorias: entretenimento, famosos, destaques, noticias, esportes, shows, saude-bem-estar ou gastronomia
 - name: image
   type: file
   config:
@@ -55,5 +62,9 @@ fields:
   label: Tipo do conteúdo
   hidden: true
   default: post
+- name: draft
+  type: boolean
+  label: Rascunho
+  default: false
 pages:
 - content/portuguese/blog/teste-post-1.md

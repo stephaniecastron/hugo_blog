@@ -1,4 +1,6 @@
 ---
+categories:
+- shows
 tags:
 - test
 - tecnology

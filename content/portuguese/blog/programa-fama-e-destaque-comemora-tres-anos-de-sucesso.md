@@ -1,12 +1,17 @@
 ---
-tags: []
+categories:
+- famosos
+tags:
+- tv
+- celebridades
+- entretenimento
 type: post
 title: Programa Fama e Destaque comemora três anos de sucesso
 date: 2020-08-10T03:00:00+00:00
 author: Lourdes Castro
 image: "/uploads/viviane-alves-e-max-fivelinha-im-001.jpg"
-bg_image: ''
-description: ''
+bg_image: "/uploads/programa-fama-e-destaque-im-002.jpg"
+description: "Programa Fama e Destaque completa três anos de sucesso com entrevistas, cobertura cultural e presença de celebridades."
 
 ---
 O programa Fama e Destaque é veiculado ao vivo , todas às terças feiras, às 16h, pela TV Guarulhos, Canal 3 da Net e 508 da Vivo e  completa três anos de existência no mês de julho, com muito sucesso.
