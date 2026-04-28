@@ -37,8 +37,8 @@
                             {{ end }}
                             {{ end }}
 
-                            <!-- Language List -->
-                            {{- if .Site.IsMultiLingual }}
+                             <!-- Language List -->
+                             {{- if gt (len .Site.Languages) 1 }}
                             <li class="nav-item">
                                 <select id="select-language" onchange="location = this.value;">
                                     {{ $siteLanguages := .Site.Languages}}
