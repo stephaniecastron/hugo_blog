@@ -7,6 +7,139 @@ sections:
 - type: directory
   path: content/portuguese/blog
   label: Posts
+  template: blog
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/famosos
+  label: Famosos
+  template: famosos
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/famosos/celebridades
+  label: Celebridades
+  template: famosos
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/famosos/novelas
+  label: Novelas
+  template: famosos
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/famosos/tv
+  label: Tv
+  template: famosos
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/cultura
+  label: Cultura
+  template: cultura
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/cultura/teatro
+  label: Teatro
+  template: cultura
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/cultura/cinema
+  label: Cinema
+  template: cultura
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/cultura/arte
+  label: Arte
+  template: cultura
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/esportes
+  label: Esportes
+  template: esportes
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/esportes/aquaticos
+  label: Aquáticos
+  template: esportes
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/esportes/futebol
+  label: Futebol
+  template: esportes
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/esportes/lutas
+  label: Lutas
+  template: esportes
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/entretenimento
+  label: Entretenimento
+  template: entretenimento
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/entretenimento/shows
+  label: Shows
+  template: entretenimento
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/entretenimento/musica
+  label: Música
+  template: entretenimento
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/entretenimento/reality-show
+  label: Reality Show
+  template: entretenimento
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/estilo-de-vida
+  label: Estilo de Vida
+  template: estilo-de-vida
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/estilo-de-vida/beleza
+  label: Beleza
+  template: estilo-de-vida
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/estilo-de-vida/saude-e-bem-estar
+  label: Saúde e Bem Estar
+  template: estilo-de-vida
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/estilo-de-vida/moda
+  label: Moda
+  template: estilo-de-vida
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/estilo-de-vida/decoracao
+  label: Decoração
+  template: estilo-de-vida
+  create: all
+  match: "*"
+- type: directory
+  path: content/portuguese/variedades
+  label: Variedades
+  template: variedades
   create: all
   match: "*"
 upload_dir: static/uploads
@@ -17,11 +150,11 @@ file_template: ":filename:"
 build:
   preview_env:
   - HUGO_ENV=staging
-  - HUGO_VERSION=0.69.0
+  - HUGO_VERSION=0.160.1
   preview_output_directory: public
   install_dependencies_command: npm install
   preview_docker_image: forestryio/hugo:node12
   mount_path: "/srv"
   working_dir: "/srv"
   instant_preview_command: npm start
-version: 0.69.0
+version: 0.160.1

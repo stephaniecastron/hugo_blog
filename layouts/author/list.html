@@ -1,0 +1,47 @@
+{{ define "main" }}
+{{ partial "page-title.html" . }}
+<section class="section">
+  <div class="container">
+    <div class="row">
+      {{ $paginator := .Paginate .Data.Pages }}
+      {{ range $paginator.Pages }}
+      <div class="col-md-4">
+        <div class="author-card text-center mb-4">
+          {{ if .Params.Photo }}
+          <img src="{{ .Params.Photo | relURL }}" alt="{{ .Title }}" class="img-fluid rounded-circle mb-3">
+          {{ else if .Params.Email }}
+          <img src="https://www.gravatar.com/avatar/{{ md5 .Params.Email }}?s=150&d=identicon" alt="{{ .Title }}" class="img-fluid rounded-circle mb-3">
+          {{ end }}
+          <h4 class="author-title">{{ .Title }}</h4>
+          <div class="author-content">
+            {{ .Content }}
+          </div>
+          {{ if .Params.Social }}
+          <ul class="list-inline social-icons">
+            {{ range .Params.Social }}
+            <li class="list-inline-item"><a href="{{ .link | safeURL }}" target="_blank"><i class="{{ .icon }}"></i></a></li>
+            {{ end }}
+          </ul>
+          {{ end }}
+          <a href="{{ .Permalink }}" class="btn btn-main">View Profile</a>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="text-center">
+  <ul class="pagination">
+    {{ if $paginator.HasPrev }}
+    <li><a href="{{ $paginator.Prev.URL }}" class="page-link">{{ i18n "page_prev" }}</a></li>
+    {{ end }}
+    {{ $paginator.Pagers }}
+    {{ if $paginator.HasNext }}
+    <li><a href="{{ $paginator.Next.URL }}" class="page-link">{{ i18n "page_next" }}</a></li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}
+{{ end }}

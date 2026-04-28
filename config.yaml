@@ -1,60 +1,62 @@
-baseURL: "/"
-title: "Dalu Noticias"
+baseURL: /
+title: Dalu Noticias
 theme: airspace
-paginate: "4"
-summaryLength: "30"
-disqusShortname: ""
+paginate: '4'
+summaryLength: '30'
+disqusShortname: ''
 disableLanguages: []
 enableRobotsTXT: false
 preloader: true
 nav_button: true
-metaDataFormat: "yaml"
+metaDataFormat: yaml
 enableMissingTranslationPlaceholders: true
 disableFastRender: true
-ignoreFiles: ["\\.tmp$", "\\.tmp\\-browserify"]
+ignoreFiles:
+- \.tmp$
+- \.tmp\-browserify
 stepAnalysis: true
 templateMetrics: true
 pluralizeListTitles: false
-googleAnalytics: ""
+googleAnalytics: ''
 buildFuture: true
-FootnoteReturnLinkContents: "↩"
+FootnoteReturnLinkContents: "\u21A9"
 defaultContentLanguage: pt
-languageCode: "pt-br"
+languageCode: pt-br
 taxonomies:
   category: categories
   tag: tags
 module:
   mounts:
-    - source: static
-      target: static
-    - source: node_modules/bootstrap/dist/js/bootstrap.min.js
-      target: static/plugins/bootstrap/bootstrap.min.js
+  - source: static
+    target: static
+  - source: node_modules/bootstrap/dist/js/bootstrap.min.js
+    target: static/plugins/bootstrap/bootstrap.min.js
 params:
   plugins:
     css:
-      - link: plugins/Ionicons/css/ionicons.min.css
-      - link: plugins/magnific-popup/magnific-popup.css
-      - link: plugins/slick/slick.css
+    - link: plugins/Ionicons/css/ionicons.min.css
+    - link: plugins/magnific-popup/magnific-popup.css
+    - link: plugins/slick/slick.css
     js:
-      - link: plugins/jQuery/jquery.min.js
-      - link: plugins/bootstrap/bootstrap.min.js
-      - link: plugins/slick/slick.min.js
-      - link: plugins/magnific-popup/jquery.magnific-popup.min.js
-      - link: plugins/shuffle/shuffle.min.js
-    authorName: "Stephanie de Castro"
-    gitHubUser: "stephaniecastron"
+    - link: plugins/jQuery/jquery.min.js
+    - link: plugins/bootstrap/bootstrap.min.js
+    - link: plugins/slick/slick.min.js
+    - link: plugins/magnific-popup/jquery.magnific-popup.min.js
+    - link: plugins/shuffle/shuffle.min.js
+    authorName: Stephanie de Castro
+    gitHubUser: stephaniecastron
   logo: images/logo.png
   description: This is meta description
   author: Stephanie de Castro
   mobile: 0124857985320
   email: stephaniecastron@hotmail.com
-  location: "North Main Street,Brooklyn Australia"
-  contact_form_action: "#"
-  google_analitycs_id: ""
+  location: North Main Street,Brooklyn Australia
+  contact_form_action: '#'
+  google_analitycs_id: ''
   multi_author: false
   preloader:
     enable: true
-    preloader: ""
+    preloader: ''
   nav_button:
     enable: true
     label: Get A Quote
@@ -62,112 +64,111 @@ params:
   gmap:
     enable: false
   social:
-    - icon: ion-social-googleplus-outline
-      link: "#"
-    - icon: ion-social-linkedin-outline
-      link: "#"
-    - icon: ion-social-pinterest-outline
-      link: "#"
-    - icon: ion-social-dribbble-outline
-      link: "#"
-    - icon: ion-social-twitter-outline
-      link: "#"
-    - icon: ion-social-facebook-outline
-      link: "#"
+  - icon: ion-social-googleplus-outline
+    link: '#'
+  - icon: ion-social-linkedin-outline
+    link: '#'
+  - icon: ion-social-pinterest-outline
+    link: '#'
+  - icon: ion-social-dribbble-outline
+    link: '#'
+  - icon: ion-social-twitter-outline
+    link: '#'
+  - icon: ion-social-facebook-outline
+    link: '#'
 menu:
   main:
-    - name: Famosos
-      hasChildren: true
-      weight: 1
-    - parent: Famosos
-      name: Celebridades
-      URL: blog
-    - parent: Famosos
-      name: Novelas
-      URL: blog
-    - parent: Famosos
-      name: Tv
-      URL: blog
-    - name: Cultura
-      hasChildren: true
-      weight: 2
-    - parent: Cultura
-      name: Teatro
-      URL: blog
-    - parent: Cultura
-      name: Cinema
-      URL: blog
-    - parent: Cultura
-      name: Arte
-      URL: blog
-    - name: Esportes
-      hasChildren: true
-      weight: 3
-    - parent: Esportes
-      name: Aquáticos
-      URL: blog
-    - parent: Esportes
-      name: Futebol
-      URL: blog
-    - parent: Esportes
-      name: Lutas
-      URL: blog
-    - name: Entretenimento
-      hasChildren: true
-      weight: 4
-    - parent: Entretenimento
-      name: Shows
-      URL: blog
-    - parent: Entretenimento
-      name: Música
-      URL: blog
-    - parent: Entretenimento
-      name: Reality Show
-      URL: blog
-    - name: Estilo de Vida
-      hasChildren: true
-      weight: 5
-    - parent: Estilo de Vida
-      name: Beleza
-      URL: faq
-    - parent: Estilo de Vida
-      name: Saúde e Bem Estar
-      URL: pricing
-    - parent: Estilo de Vida
-      name: Moda
-      URL: pricing
-    - parent: Estilo de Vida
-      name: Decoração
-      URL: pricing
-    - name: Variedades
-      URL: contact
-      weight: 6
+  - name: Famosos
+    hasChildren: true
+    weight: 1
+  - parent: Famosos
+    name: Celebridades
+    URL: /famosos/celebridades
+  - parent: Famosos
+    name: Novelas
+    URL: /famosos/novelas
+  - parent: Famosos
+    name: Tv
+    URL: /famosos/tv
+  - name: Cultura
+    hasChildren: true
+    weight: 2
+  - parent: Cultura
+    name: Teatro
+    URL: /cultura/teatro
+  - parent: Cultura
+    name: Cinema
+    URL: /cultura/cinema
+  - parent: Cultura
+    name: Arte
+    URL: /cultura/arte
+  - name: Esportes
+    hasChildren: true
+    weight: 3
+  - parent: Esportes
+    name: "Aqu\xE1ticos"
+    URL: /esportes/aquaticos
+  - parent: Esportes
+    name: Futebol
+    URL: /esportes/futebol
+  - parent: Esportes
+    name: Lutas
+    URL: /esportes/lutas
+  - name: Entretenimento
+    hasChildren: true
+    weight: 4
+  - parent: Entretenimento
+    name: Shows
+    URL: /entretenimento/shows
+  - parent: Entretenimento
+    name: "M\xFAsica"
+    URL: /entretenimento/musica
+  - parent: Entretenimento
+    name: Reality Show
+    URL: /entretenimento/reality-show
+  - name: Estilo de Vida
+    hasChildren: true
+    weight: 5
+  - parent: Estilo de Vida
+    name: Beleza
+    URL: /estilo-de-vida/beleza
+  - parent: Estilo de Vida
+    name: "Sa\xFAde e Bem Estar"
+    URL: /estilo-de-vida/saude-e-bem-estar
+  - parent: Estilo de Vida
+    name: Moda
+    URL: /estilo-de-vida/moda
+  - parent: Estilo de Vida
+    name: "Decora\xE7\xE3o"
+    URL: /estilo-de-vida/decoracao
+  - name: Variedades
+    URL: /variedades
+    weight: 6
   footer:
-    - name: About
-      URL: about
-      weight: 1
-    - name: Project
-      URL: project
-      weight: 2
-    - name: Service
-      URL: service
-      weight: 3
-    - name: Pricing
-      URL: pricing
-      weight: 4
-    - name: FAQ
-      URL: faq
-      weight: 5
-    - name: Contact
-      URL: contact
-      weight: 6
+  - name: About
+    URL: about
+    weight: 1
+  - name: Project
+    URL: project
+    weight: 2
+  - name: Service
+    URL: service
+    weight: 3
+  - name: Pricing
+    URL: pricing
+    weight: 4
+  - name: FAQ
+    URL: faq
+    weight: 5
+  - name: Contact
+    URL: contact
+    weight: 6
 Languages:
   pt:
-    languageName: Português
-    languageCode: "pt-br"
+    languageName: "Portugu\xEAs"
+    languageCode: pt-br
     contentDir: content/portuguese
     weight: 1
     home: Incio
-    copyright: >-
-      Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
+    copyright: Copyright &copy; 2019 [Themefisher](https://themefisher.com) All Rights
       Reserved
